@@ -1,0 +1,42 @@
+<!--<h2 style="text-align: center">Login</h2>-->
+
+<!--<div class="example-form">-->
+<!--<mat-form-field class="example-full-width">-->
+<!--  <input matInput placeholder="Enter your userName" email required >-->
+<!--</mat-form-field>-->
+
+
+<!--<mat-form-field  class="example-full-width" >-->
+<!--  <input matInput placeholder="password" type="password" required>-->
+
+<!--</mat-form-field>-->
+<!--  <button mat-raised-button color="primary"	style="left: 100%" [routerLink]="['/servers']">Login!</button>-->
+
+<!--  <button mat-button color="primary" style="left: 100%"  [routerLink]="['/register']"> Register</button>-->
+<!--</div>-->
+
+
+
+
+
+<h2 style="text-align: center">Login</h2>
+
+<div class="example-form" style="text-align: center">
+
+  <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="onLogIn()">
+      <mat-form-field class="example-full-width">
+        <input matInput type="email" placeholder="Email" email  formControlName="email" id="email"  >
+        <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'email')">Email is required</mat-error>
+        <mat-error *ngIf="hasError('email', 'maxlength')">You have more than 20 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput type="password" placeholder="Password" formControlName="password">
+        <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+        <mat-error *ngIf="hasError('password', 'minlength')">Min 7 characters</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.valid" 	style="left: 99%">Login</button>
+      <button type="button" mat-raised-button  color="primary" 	style="left: 100%" [routerLink]="['/register']" >Register</button>
+   </form>
+</div>
+

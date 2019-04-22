@@ -1,16 +1,20 @@
-// import {Ingredient} from '../shared/ingredient.model';
+import { Chart } from 'chart.js';
 
-export class Recipe {
+export class Server {
  public name: string;
  public description: string;
  public imagePath: string;
  public serverType: string;
  public serverStatus: string;
- constructor(name: string, desc: string, imagePath: string, serverType: string, serverStatus: string) {
+ public chart: Chart;
+ public serverCost: number;
+ constructor(name: string, desc: string, imagePath: string, serverType: string, serverStatus: string, chart: Chart, serverCost: number) {
    this.name = name;
    this.description = desc;
    this.imagePath = imagePath;
    this.serverType = serverType;
    this.serverStatus = serverStatus;
+   this.chart = chart;
+   this.serverCost = serverCost;
  }
 }

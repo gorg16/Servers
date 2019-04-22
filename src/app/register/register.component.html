@@ -1,0 +1,60 @@
+
+
+<h2 style="text-align: center">Register</h2>
+<div class="example-form" style="text-align: center">
+  <form [formGroup]="registerForm"  >
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="Enter your userName"
+          type="text"
+          formControlName="name"
+          id="name">
+      </mat-form-field>
+    <mat-form-field class="example-full-width">
+    <input
+      matInput
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+      id="password">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" >
+      <input
+        matInput
+        type="email"
+        placeholder="Email"
+        email
+        formControlName="email"
+        id="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-select
+        placeholder="Server types"
+        formControlName="types"
+        multiple>
+        <mat-select-trigger>
+          {{registerForm.get('types').value  ?  registerForm.get('types').value[0] : ''   }}
+          <span *ngIf="registerForm.get('types').value?.length > 1" class="example-additional-selection">
+          (+{{registerForm.get('types').value.length - 1}} {{registerForm.get('types').value?.length === 2 ? 'other' : 'others'}})
+        </span>
+        </mat-select-trigger>
+        <mat-option *ngFor="let types of serverTypes" [value]="types">{{types}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      style="left: 100%"
+      [disabled]="!registerForm.valid"
+      [routerLink]="['/servers']"
+      (click)="onRegister();
+       openDialog()">
+      Register!
+    </button>
+
+    <button mat-button color="primary" style="left: 100%"  [routerLink]="['/login']"> Cancel</button>
+
+  </form>
+</div>

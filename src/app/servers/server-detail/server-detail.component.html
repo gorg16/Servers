@@ -1,0 +1,45 @@
+<!--<div class="row">-->
+<!--  <div class="col-xs-12">-->
+<!--    <img [src]="server.imagePath" alt="{{server.name}}" class="img-responsive" style="max-height: 150px;">-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--    <div class="col-xs-12">-->
+<!--    <h1>{{server.name}}</h1>-->
+<!--    </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--  <div class="col-xs-12">-->
+<!--    <h1>{{server.serverType}}</h1>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--  <div class="col-xs-12">-->
+<!--    <h1>{{server.serverStatus}}</h1>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<mat-card class="example-card" style="text-align: center;">
+<!--    <div mat-card-avatar class="example-header-image"></div>-->
+    <mat-card-title >{{server.name}}</mat-card-title>
+    <mat-card-subtitle>{{server.serverType}}</mat-card-subtitle>
+<!--  <img mat-card-image [src]="server.imagePath" alt="Photo of a Shiba Inu" style="max-height: 600px">-->
+  <mat-card-subtitle>
+    {{server.serverCost}} $
+  </mat-card-subtitle>
+
+
+  <mat-card-content>
+    <app-charts [server]="server"></app-charts>
+  </mat-card-content>
+  <mat-card-content>
+    <p>
+      {{server.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions style="text-align: center">
+    <button mat-raised-button color="warn" (click)="openDialog()">Stop Server</button>
+  </mat-card-actions>
+</mat-card>

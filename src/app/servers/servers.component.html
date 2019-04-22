@@ -1,0 +1,18 @@
+<app-header></app-header>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened style="width: 25%;">
+    <mat-nav-list style="  overflow: hidden;">
+      <app-server-list ></app-server-list>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="Server Detail">
+        <router-outlet></router-outlet>
+      </mat-tab>
+      <mat-tab label="Statistics">
+
+      </mat-tab>
+    </mat-tab-group>
+  </mat-drawer-content>
+</mat-drawer-container>
