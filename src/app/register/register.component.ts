@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog} from '@angular/material';
 import {DialogSuccessComponent} from '../dialog-success/dialog-success.component';
 import {ServersService} from '../servers/servers.service';
+import {LocalStorageService} from '../local-storage.service';
 
 @Component({
   selector: 'app-register',
@@ -12,9 +13,9 @@ import {ServersService} from '../servers/servers.service';
 export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
-  constructor(public dialog: MatDialog, private serversService: ServersService) { }
+  constructor(public dialog: MatDialog, private serversService: ServersService, private localStorageService: LocalStorageService) { }
 
-  serverTypes: string[] = ['WEB', 'EMAIL', 'HTTP', 'SSH'];
+  serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP'];
 
 
   ngOnInit() {
@@ -28,15 +29,9 @@ export class RegisterComponent implements OnInit {
 
 
   onRegister() {
-    this.serversService.serverTypes.next(this.registerForm.get('types').value);
-    console.log('aaaaaaa');
-    console.log(this.registerForm);
-    // localStorage.setItem('name', this.registerForm.get('name').value);
-    // localStorage.removeItem('name');
-    // localStorage.getItem('name');
-
-    const users = JSON.parse(localStorage.getItem('Users')) || [];
-
+    // this.serversService.serverTypes.next(this.registerForm.get('types').value);
+    // const users = JSON.parse(localStorage.getItem('Users')) || [];
+    const users = LocalStorageService.get('Users') || [];
     const user = {
       name: this.registerForm.get('name').value,
       email: this.registerForm.get('email').value,
@@ -44,15 +39,10 @@ export class RegisterComponent implements OnInit {
       types: this.registerForm.get('types').value
       }
     ;
-    // const data = [users, ...[user]];
 
     users.push(user);
-    localStorage.setItem('Users', JSON.stringify(users));
-
-
-    // localStorage.setItem(JSON.stringify('Users'),  data);
-
-    console.log(users);
+    LocalStorageService.set('Users', users);
+    // console.log(users);
 
   }
 

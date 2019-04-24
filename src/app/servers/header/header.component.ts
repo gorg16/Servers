@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LocalStorageService} from '../../local-storage.service';
+
 
 @Component({
   selector: 'app-header',
@@ -6,26 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  usernaeme: any;
-  storageUsers: any;
   currentUserName: any;
+  currentUserNumber: any;
   constructor() { }
 
   ngOnInit() {
     this.currentUserName = JSON.parse(localStorage.getItem('currentUser')).name;
-    // this.storageUsers = localStorage.getItem('Users');
-    // if (this.storageUsers) {
-    //   this.storageUsers = JSON.parse(this.storageUsers);
-    //   this.currentUserName = this.storageUsers.find((r) => {
-    //     return r.name ;
-    //   });
-    // }
-    // console.log(this.currentUserName);
+    this.currentUserNumber = LocalStorageService.get('currentNumber');
   }
 
 
   onLogOut() {
-  localStorage.removeItem('currentUser');
+  LocalStorageService.remove('currentUser');
+  LocalStorageService.remove('currentNumber');
   }
 
 

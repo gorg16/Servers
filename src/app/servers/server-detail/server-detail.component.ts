@@ -19,15 +19,10 @@ export class ServerDetailComponent implements OnInit {
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
-
-    console.log(this.id, 'texsz');
-    // const id = this.route.snapshot.params['id'];
     this.route.params
       .subscribe(
         (parmas: Params) => {
           this.id = +parmas['id'];
-          console.log('aaa');
-
           this.server = this.serversService.getServer(this.id);
           console.log(this.server, 'saaa');
         }

@@ -1,7 +1,7 @@
 import { Chart } from 'chart.js';
 
 export class Server {
-  public id: number;
+ public id: number;
  public name: string;
  public description: string;
  public imagePath: string;
@@ -9,7 +9,15 @@ export class Server {
  public serverStatus: string;
  public chart: Chart;
  public serverCost: number;
- constructor(id: number,name: string, desc: string, imagePath: string, serverType: string, serverStatus: string, chart: Chart, serverCost: number) {
+ constructor(
+             id: number,
+             name: string,
+             desc: string,
+             imagePath: string,
+             serverType: string,
+             serverStatus: string,
+             chart: Chart,
+             serverCost: number) {
    this.name = name;
    this.description = desc;
    this.imagePath = imagePath;
