@@ -2,7 +2,7 @@
 <div class="row">
   <div class="col-xs-12">
     <app-server-item
-      *ngFor="let serverEl of servers; let i = index" [Server]="serverEl" [index]="i"
+      *ngFor="let serverEl of userService; let i = index" [Server]="serverEl" [index]="serverEl.id"
       ></app-server-item>
   </div>
 </div>

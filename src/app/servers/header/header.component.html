@@ -1,9 +1,10 @@
 <mat-toolbar>
   <mat-toolbar-row>
     <span>Servers</span>
+    <p >Logged in as User {{currentUserName}} </p>
     <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-    <button mat-button [routerLink]="['/login']">LogOut</button>
+    <mat-icon class="example-icon"  color="warn" aria-label="Example heart icon">favorite</mat-icon>
+    <button mat-button [routerLink]="['/login']" (click)="onLogOut()">LogOut</button>
 
   </mat-toolbar-row>
 </mat-toolbar>

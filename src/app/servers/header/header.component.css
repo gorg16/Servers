@@ -5,3 +5,10 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+
+p {
+  position: relative;
+  left: 20%;
+  margin: 0 0 0px;
+}
