@@ -14,20 +14,17 @@ export class ServerDetailComponent implements OnInit {
     id: number;
    server: Server;
   servers: Server[];
-  animal: string;
-  name: string;
+
   constructor(private serversService: ServersService, private  route: ActivatedRoute, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
-
-    console.log('texsz');
-    // const id = this.route.snapshot.params['id'];
     this.route.params
       .subscribe(
         (parmas: Params) => {
           this.id = +parmas['id'];
           this.server = this.serversService.getServer(this.id);
+          console.log(this.server, 'saaa');
         }
       );
   }
@@ -35,7 +32,6 @@ export class ServerDetailComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(MatDialogComponent, {
       width: '250px',
-      data: {name: this.name, animal: this.animal}
     });
 
     dialogRef.afterClosed().subscribe(result => {

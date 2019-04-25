@@ -10,8 +10,9 @@ import {Subscription} from 'rxjs';
 })
 export class ServerListComponent implements OnInit, OnDestroy {
 
-  // subscription: Subscription;
   servers: Server[];
+  types = [];
+  userService: Server[];
 
 
   constructor(private serversService: ServersService ) { }
@@ -19,10 +20,17 @@ export class ServerListComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.servers = this.serversService.getServers();
+    this.types =  JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')).types : null;
+    this.userService = this.servers.filter(user => {
+      for (let i = 0; i <= this.types.length ; i++) {
+        if (user.serverType === this.types[i]) {
+          return true;
+        }
+      }
+    });
   }
 
   ngOnDestroy(): void {
-    // this.subscription.unsubscribe();
   }
 
 }

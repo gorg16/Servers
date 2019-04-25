@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from '../auth.service';
 import {User} from '../servers/user.modal';
+import {LocalStorageService} from '../local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,15 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   users: User[];
   @Input() user: User;
+  storageUsers: any;
+  currentUser: any;
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.users = this.authService.getUsers();
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.maxLength(20)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(7)])
+      email: new FormControl('', [Validators.required, Validators.maxLength(30)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)])
     });
   }
 
@@ -28,11 +31,18 @@ export class LoginComponent implements OnInit {
   }
 
   onLogIn() {
-    // const {value} = this.loginForm.get('email');
-    // console.log(this.authService.getUsers());
-    // if (value === this.users[0].userEmail) {
-    this.router.navigate(['/servers']);
-  // }
+    this.storageUsers = LocalStorageService.get('Users');
+    if (this.storageUsers) {
+      this.storageUsers = JSON.parse(JSON.stringify(this.storageUsers));
+      this.currentUser = this.storageUsers.find((user) => {
+      return user.email === this.loginForm.get('email').value &&
+        user.password === this.loginForm.get('password').value;
+      });
+    }
+    if (this.currentUser) {
+      LocalStorageService.set('currentUser', this.currentUser);
+      this.router.navigate(['/servers']);
+    }
   }
 
 }

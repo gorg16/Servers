@@ -2,7 +2,7 @@
 
 <h2 style="text-align: center">Register</h2>
 <div class="example-form" style="text-align: center">
-  <form [formGroup]="registerForm"  >
+  <form [formGroup]="registerForm" >
       <mat-form-field class="example-full-width">
         <input
           matInput
@@ -48,9 +48,8 @@
       color="primary"
       style="left: 100%"
       [disabled]="!registerForm.valid"
-      [routerLink]="['/servers']"
-      (click)="onRegister();
-       openDialog()">
+      [routerLink]="['/login']"
+      (click)="onRegister(); openDialog()">
       Register!
     </button>
 

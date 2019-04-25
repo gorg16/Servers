@@ -1,6 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {DialogData} from '../servers/server-detail/mat-dialog/mat-dialog.component';
+import {LocalStorageService} from '../local-storage.service';
 
 @Component({
   selector: 'app-dialog-success',
@@ -18,6 +19,7 @@ export class DialogSuccessComponent implements OnInit {
   }
 
   ngOnInit() {
+    LocalStorageService.set('currentNumber', this.number);
   }
 
   onNoClick(): void {
