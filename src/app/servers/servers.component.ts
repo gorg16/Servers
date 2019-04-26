@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {TableModel} from '../table.model';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from '@angular/router';
-import {TablesService} from '../tables.service';
+import {Server} from './servers.modal';
+import {ServersService} from './servers.service';
 
 @Component({
   selector: 'app-servers',
@@ -9,21 +9,21 @@ import {TablesService} from '../tables.service';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private tableService: TablesService) { }
   id: number;
-  tables: TableModel[];
-  table: TableModel;
+  server: Server;
+  servers: Server[];
+
+  constructor(private serversService: ServersService, private  route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.tables = this.tableService.getTablesModel();
+    this.servers = this.serversService.getServers();
+    console.log(this.servers, 'vvv');
     this.route.params
       .subscribe(
         (parmas: Params) => {
           this.id = +parmas['id'];
-          this.table = this.tableService.getTable(this.id);
+          this.server = this.serversService.getServer(this.id);
         }
       );
-
   }
-
 }

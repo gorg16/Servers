@@ -11,12 +11,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'servers' , component: ServersComponent, children: [
-      {path: '', component: ServerStartComponent},
-      {path: ':id', component: ServerDetailComponent},
-      // {path: ':id-1', component: TableComponent},
-
-    ] },
+  {path: 'servers/:id' , component: ServersComponent},
 ];
 
 @NgModule({

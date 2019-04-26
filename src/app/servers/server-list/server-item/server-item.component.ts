@@ -1,7 +1,6 @@
 import {Component,  Input, OnInit} from '@angular/core';
 import {Server} from '../../servers.modal';
 import {ServersService} from '../../servers.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-server-item',
@@ -15,16 +14,12 @@ export class ServerItemComponent implements OnInit {
   currentUser: any;
 
 
-  constructor(private serversService: ServersService, private router: Router) {}
+  constructor(private serversService: ServersService) {}
 
   ngOnInit() {
     this.serversService.serverTypes.subscribe( type => {
       this.serverType = type;
     });
-  }
-
-  goTo() {
-    this.router.navigate(['servers', this.index - 1]);
   }
 
 }

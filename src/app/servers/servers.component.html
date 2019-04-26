@@ -8,10 +8,10 @@
   <mat-drawer-content style="width: 75%;">
     <mat-tab-group mat-stretch-tabs>
       <mat-tab label="OverWiew">
-        <router-outlet></router-outlet>
+        <app-server-detail [id]="id"></app-server-detail>
       </mat-tab>
       <mat-tab label="Logs">
-        <app-table></app-table>
+        <app-table [id]="id"></app-table>
       </mat-tab>
       <mat-tab label="CI/CD">
         <app-ci-cd></app-ci-cd>

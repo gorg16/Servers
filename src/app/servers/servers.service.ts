@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Server} from './servers.modal';
 import {BehaviorSubject} from 'rxjs';
+import {LogsModel} from './logs.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ServersService {
   constructor() { }
    public serverTypes = new BehaviorSubject(null);
    public servers: Server[] = [
-    new Server(1,
+     new Server(1,
       'WEB SERVER',
       'Active',
       '12h 30m',
@@ -22,21 +23,42 @@ export class ServersService {
       'Oct 2019',
       15,
       'October',
-      'November'
+      'November',
+       [
+         new LogsModel('Success', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Success', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Success', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Success', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+       ]
              ),
-    new Server(2,
-      'FTP SERVER',
-              'offline',
-              '25h 12m',
-      'FTP',
-      'Stoped',
-      [65, 24, 80, 56, 56, 55, 40, 45, 24, 66, 123, 56 ],
-      45,
-      'Nov 2017',
-      23,
-      'May',
-      'April'
-              ),
+     new Server(2,
+       'FTP SERVER',
+       'offline',
+       '25h 12m',
+       'FTP',
+       'Stoped',
+       [65, 24, 80, 56, 56, 55, 40, 45, 24, 66, 123, 56 ],
+       45,
+       'Nov 2017',
+       23,
+       'May',
+       'April',
+       // 'Failure',
+       // 'Success',
+       // new Date( '2018-07-13'),
+       // new Date('2018-09-13')
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+       ]
+     ),
      new Server(3,
        'HTTP SERVER',
        'offline',
@@ -48,7 +70,20 @@ export class ServersService {
        'Sep 2018',
        7,
        'January',
-       'February'
+       'February',
+       // 'Success',
+       // 'Failure',
+       // new Date( '2018-07-14'),
+       // new Date('2018-08-13')
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'Ando'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'Gor'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'Vahan'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'Narek'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'Artyom'),
+       ]
+
      ),
      new Server(4,
        'SSH SERVER',
@@ -62,7 +97,16 @@ export class ServersService {
        'Mar 2017',
        12,
        'August',
-       'September'
+       'September',
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+       ]
+
      ),
      new Server(5,
        'NTP SERVER',
@@ -75,7 +119,16 @@ export class ServersService {
        'Dec 2018',
        15,
        'June',
-       'July'
+       'July',
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+       ]
+
      ),
      new Server(6,
        'POP3 SERVER',
@@ -88,7 +141,16 @@ export class ServersService {
        'Apr 2018',
        4,
        'November',
-       'December'
+       'December',
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'slfkansdl'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'dcaslnad'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'dcaslnad'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'dcaslnad'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'dcaslnad'),
+       ]
+
      ),
      new Server(7,
        'SMTP SERVER',
@@ -101,7 +163,14 @@ export class ServersService {
        'Dec 2019',
        8,
        'December',
-       'January'
+       'January',
+       [
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+         new LogsModel('Failure', new Date( '2018-07-12'), 'akusgdahs;oldmaouash;odnxmkasdhkhgaudon;aezhyewigapnzodqowe'),
+       ]
 
      ),
               ];

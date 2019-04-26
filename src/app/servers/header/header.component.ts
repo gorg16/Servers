@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.currentUserName = JSON.parse(localStorage.getItem('currentUser')).name;
+    this.currentUserName = LocalStorageService.get('currentUser').name;
     this.currentUserNumber = LocalStorageService.get('currentNumber');
   }
 

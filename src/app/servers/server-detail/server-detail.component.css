@@ -11,7 +11,8 @@ table{
 }
 table td {
   padding: 28px ;
-  font-size: 19px;
+  padding-bottom: 10px;
+  font-size: 15px;
   text-align: left;
   font-weight: 300;
 }

@@ -1,5 +1,6 @@
-table {
-  text-align: center;
-  width: 98%;
-  margin: 2px;
+
+table td a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

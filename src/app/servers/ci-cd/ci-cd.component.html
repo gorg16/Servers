@@ -1,8 +1,6 @@
-<div style="text-align:center">
+<div class="all">
       <h1> CI/CD </h1>
       <h3>CI commands</h3>
-
-
       <mat-form-field class="field">
         <input #valueTodo matInput (keyup.enter)="addNewTodo(valueTodo.value); valueTodo.value = ''" (blur)="addNewTodo(valueTodo.value); valueTodo.value=''"
                placeholder="Write what you to do">
@@ -10,14 +8,6 @@
       <button color="primary" mat-mini-fab (click)="addNewTodo(valueTodo.value)">
         <i class="material-icons">add</i>
       </button>
-<!--      <mat-list #todoist class="todolist">-->
-<!--        <mat-list-item *ngFor="let todo of todolist; let i = index" class="list">-->
-<!--            {{ todo }}-->
-<!--            <i (click)="deleteToDo(i)" style="cursor: pointer" class="material-icons">delete </i>-->
-
-<!--        </mat-list-item>-->
-<!--      </mat-list>-->
-
     <table class="todolist">
       <tr *ngFor="let todo of todolist; let i = index">
         <td style="font-size: 32px">{{i+1}})</td>
@@ -29,7 +19,4 @@
         </td>
       </tr>
     </table>
-
-
-
 </div>

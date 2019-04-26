@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     }
     if (this.currentUser) {
       LocalStorageService.set('currentUser', this.currentUser);
-      this.router.navigate(['/servers']);
+      this.router.navigate(['/servers/3']);
     }
   }
 

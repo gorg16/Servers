@@ -34,6 +34,8 @@ import { CiCdComponent } from './servers/ci-cd/ci-cd.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
 import {TablesService} from './tables.service';
+import { ElipsisPipe } from './elipsis.pipe';
+import { LogsDetailsComponent } from './servers/table/logs-details/logs-details.component';
 
 
 @NgModule({
@@ -52,8 +54,9 @@ import {TablesService} from './tables.service';
     MatDialogComponent,
     DialogSuccessComponent,
     TableComponent,
-
-    CiCdComponent
+    CiCdComponent,
+    ElipsisPipe,
+    LogsDetailsComponent
 
   ],
   imports: [
@@ -77,7 +80,7 @@ import {TablesService} from './tables.service';
     MatTableModule
 
   ],
-  entryComponents: [MatDialogComponent, DialogSuccessComponent]
+  entryComponents: [MatDialogComponent, DialogSuccessComponent, LogsDetailsComponent]
   ,
   providers: [ ServersService, TablesService],
   bootstrap: [AppComponent]
