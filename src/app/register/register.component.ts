@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   constructor(public dialog: MatDialog, private serversService: ServersService, private localStorageService: LocalStorageService) { }
 
-  serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP'];
+  serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP', 'HTTP'];
 
 
   ngOnInit() {

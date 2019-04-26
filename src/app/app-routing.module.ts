@@ -5,6 +5,7 @@ import {ServerStartComponent} from './servers/server-start/server-start.componen
 import {ServerDetailComponent} from './servers/server-detail/server-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {TableComponent} from './servers/table/table.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'servers' , component: ServersComponent, children: [
       {path: '', component: ServerStartComponent},
       {path: ':id', component: ServerDetailComponent},
+      // {path: ':id-1', component: TableComponent},
 
     ] },
 ];

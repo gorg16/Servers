@@ -4,6 +4,7 @@ import {ServersService} from '../servers.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {MatDialog} from '@angular/material';
 import {MatDialogComponent} from './mat-dialog/mat-dialog.component';
+import {TablesService} from '../../tables.service';
 
 @Component({
   selector: 'app-server-detail',
@@ -15,16 +16,17 @@ export class ServerDetailComponent implements OnInit {
    server: Server;
   servers: Server[];
 
-  constructor(private serversService: ServersService, private  route: ActivatedRoute, private dialog: MatDialog) { }
+  constructor(private serversService: ServersService, private  route: ActivatedRoute, private dialog: MatDialog, private tableService: TablesService) { }
 
   ngOnInit() {
     this.servers = this.serversService.getServers();
+
     this.route.params
       .subscribe(
         (parmas: Params) => {
           this.id = +parmas['id'];
           this.server = this.serversService.getServer(this.id);
-          console.log(this.server, 'saaa');
+          console.log(this.server, 'saaakdajehfkjhefjkdashfkjwrd');
         }
       );
   }

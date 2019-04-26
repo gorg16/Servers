@@ -5,13 +5,16 @@
       <app-server-list ></app-server-list>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content style="width: 75%;">
     <mat-tab-group mat-stretch-tabs>
-      <mat-tab label="Server Detail">
+      <mat-tab label="OverWiew">
         <router-outlet></router-outlet>
       </mat-tab>
-      <mat-tab label="Statistics">
-
+      <mat-tab label="Logs">
+        <app-table></app-table>
+      </mat-tab>
+      <mat-tab label="CI/CD">
+        <app-ci-cd></app-ci-cd>
       </mat-tab>
     </mat-tab-group>
   </mat-drawer-content>
