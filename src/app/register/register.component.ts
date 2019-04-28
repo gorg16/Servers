@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   public registerForm: FormGroup;
   constructor(public dialog: MatDialog, private serversService: ServersService, private localStorageService: LocalStorageService) { }
 
-  serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP'];
+  serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP', 'HTTP'];
 
 
   ngOnInit() {
@@ -29,8 +29,6 @@ export class RegisterComponent implements OnInit {
 
 
   onRegister() {
-    // this.serversService.serverTypes.next(this.registerForm.get('types').value);
-    // const users = JSON.parse(localStorage.getItem('Users')) || [];
     const users = LocalStorageService.get('Users') || [];
     const user = {
       name: this.registerForm.get('name').value,
@@ -42,7 +40,6 @@ export class RegisterComponent implements OnInit {
 
     users.push(user);
     LocalStorageService.set('Users', users);
-    // console.log(users);
 
   }
 

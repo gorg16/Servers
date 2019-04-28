@@ -1,21 +1,70 @@
 
 <mat-card class="example-card" style="text-align: center;">
     <mat-card-title >{{server.name}}</mat-card-title>
-    <mat-card-subtitle>{{server.serverType}}</mat-card-subtitle>
-  <mat-card-subtitle>
-    {{server.serverCost}} $
-  </mat-card-subtitle>
+
+<div style="text-align: center; font-size: 19px; font-weight: 300">
+  <mat-card-subtitle>Created Date :   {{server.createdDate}} </mat-card-subtitle>
+</div>
+  <table align="center">
+    <tr>
+      <td><b> Cost :</b>  {{server.serverCost}}$</td>
+      <td> <b> Active Time : </b>  {{server.activeTime}}</td>
+      <td> <b> Server errors for 24h : </b>  {{server.serverErrors}} errors</td>
+    </tr>
+    <tr>
+      <td><b> Status : </b> {{server.serverStatus}}</td>
+      <td><b> Last Paymnet : </b> {{server.lastPaymnet}}</td>
+      <td><b> Next Paymnet : </b> {{server.nextPayment}}</td>
+    </tr>
+  </table>
 
 
   <mat-card-content>
     <app-charts [server]="server"></app-charts>
   </mat-card-content>
-  <mat-card-content>
-    <p>
-      {{server.description}}
-    </p>
-  </mat-card-content>
+
   <mat-card-actions style="text-align: center">
-    <button mat-raised-button color="warn" (click)="openDialog()">Stop Server</button>
+    <button mat-raised-button color="primary" (click)="openDialog()" value="Restart"> Restart Server </button>
+    <button mat-raised-button color="warn" (click)="openDialog()" value="Stop">Stop Server</button>
   </mat-card-actions>
 </mat-card>
+<!--<mat-tab-group mat-stretch-tabs>-->
+<!--  <mat-tab label="OverWiew">-->
+
+<!--    <mat-card class="example-card" style="text-align: center;">-->
+<!--        <mat-card-title >{{server.name}}</mat-card-title>-->
+
+<!--    <div style="text-align: center; font-size: 19px; font-weight: 300">-->
+<!--      <b>Created Date :  </b>  {{server.createdDate}}-->
+<!--    </div>-->
+<!--      <table align="center">-->
+<!--        <tr>-->
+<!--          <td><b> Cost :</b>  {{server.serverCost}}$</td>-->
+<!--          <td> <b> Active Time : </b>  {{server.activeTime}}</td>-->
+<!--          <td> <b> Server errors for 24h : </b>  {{server.serverErrors}} errors</td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--          <td><b> Status : </b> {{server.serverStatus}}</td>-->
+<!--          <td><b> Last Paymnet : </b> {{server.lastPaymnet}}</td>-->
+<!--          <td><b> Next Paymnet : </b> {{server.nextPayment}}</td>-->
+<!--        </tr>-->
+<!--      </table>-->
+
+
+<!--      <mat-card-content>-->
+<!--        <app-charts [server]="server"></app-charts>-->
+<!--      </mat-card-content>-->
+
+<!--      <mat-card-actions style="text-align: center">-->
+<!--        <button mat-raised-button color="primary" (click)="openDialog()" value="Restart"> Restart Server </button>-->
+<!--        <button mat-raised-button color="warn" (click)="openDialog()" value="Stop">Stop Server</button>-->
+<!--      </mat-card-actions>-->
+<!--    </mat-card>-->
+<!--  </mat-tab>-->
+<!--  <mat-tab label="Logs">-->
+<!--    <app-table></app-table>-->
+<!--  </mat-tab>-->
+<!--  <mat-tab label="CI/CD">-->
+<!--    <app-ci-cd></app-ci-cd>-->
+<!--  </mat-tab>-->
+<!--</mat-tab-group>-->

@@ -1,0 +1,16 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading" style="text-align: center"><b>DEPLOYS</b></div>
+  <table align="center" class="table" >
+    <tr>
+      <th>Time</th>
+      <th>Logs</th>
+      <th>Status</th>
+    </tr>
+    <tr *ngFor="let logs of server.logs" [style.background-color]=" logs.status === 'Success' ? 'lime' : 'crimson'">
+      <td>{{logs.date}}</td>
+   <td (click)="openModal(logs.text )">{{logs.text | elipsis:30}} <a> more</a> </td>
+      <td>{{logs.status}}</td>
+    </tr>
+  </table>
+</div>

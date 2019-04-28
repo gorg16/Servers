@@ -29,6 +29,13 @@ import { MatDialogModule} from '@angular/material/dialog';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
 import { DialogSuccessComponent } from './dialog-success/dialog-success.component';
+import { TableComponent } from './servers/table/table.component';
+import { CiCdComponent } from './servers/ci-cd/ci-cd.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
+import {TablesService} from './tables.service';
+import { ElipsisPipe } from './elipsis.pipe';
+import { LogsDetailsComponent } from './servers/table/logs-details/logs-details.component';
 
 
 @NgModule({
@@ -45,7 +52,11 @@ import { DialogSuccessComponent } from './dialog-success/dialog-success.componen
     ServerItemComponent,
     ChartsComponent,
     MatDialogComponent,
-    DialogSuccessComponent
+    DialogSuccessComponent,
+    TableComponent,
+    CiCdComponent,
+    ElipsisPipe,
+    LogsDetailsComponent
 
   ],
   imports: [
@@ -64,12 +75,14 @@ import { DialogSuccessComponent } from './dialog-success/dialog-success.componen
     MatCardModule,
     MatDialogModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCheckboxModule,
+    MatTableModule
 
   ],
-  entryComponents: [MatDialogComponent, DialogSuccessComponent]
+  entryComponents: [MatDialogComponent, DialogSuccessComponent, LogsDetailsComponent]
   ,
-  providers: [ ServersService],
+  providers: [ ServersService, TablesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
