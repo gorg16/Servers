@@ -91,8 +91,12 @@ font-style: normal;
 table th {
   text-align: center;
 }
+table td {
+  text-align: left;
+}
 
 a{
   text-decoration: none;
   cursor: pointer;
+  color: black;
 }

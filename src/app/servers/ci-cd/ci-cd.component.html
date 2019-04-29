@@ -71,7 +71,7 @@
       </tr>
       <tr *ngFor="let cicd of server.ciCdTable" [style.background-color]=" cicd.deployed === true ? 'lime' : 'crimson'">
         <td>{{cicd.command}}</td>
-        <td>{{cicd.time | date: 'short'}} </td>
+        <td>{{cicd.time | date: 'medium'}} </td>
         <td (click)="openModal(cicd.logs)">{{cicd.logs| elipsis:30}} <a> more</a> </td>
         <td>{{cicd.status}}</td>
         <td>{{cicd.deployed}}</td>
