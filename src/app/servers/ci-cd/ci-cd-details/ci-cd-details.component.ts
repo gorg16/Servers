@@ -1,20 +1,20 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {Server} from '../../servers.modal';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 @Component({
-  selector: 'app-logs-details',
-  templateUrl: './logs-details.component.html',
-  styleUrls: ['./logs-details.component.css']
+  selector: 'app-ci-cd-details',
+  templateUrl: './ci-cd-details.component.html',
+  styleUrls: ['./ci-cd-details.component.css']
 })
-export class LogsDetailsComponent implements OnInit {
+export class CiCdDetailsComponent implements OnInit {
   index: number;
   public server: Server;
 
-  constructor(public dialogRef: MatDialogRef<LogsDetailsComponent>,
+  constructor(public dialogRef: MatDialogRef<CiCdDetailsComponent>,
               @Inject(MAT_DIALOG_DATA)  public data: any
-              ,
-              ) { }
+    ,
+  ) { }
 
   ngOnInit() {
     this.server = this.data.server;
@@ -24,5 +24,6 @@ export class LogsDetailsComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+
 
 }

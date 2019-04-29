@@ -16,14 +16,17 @@ export class RegisterComponent implements OnInit {
   constructor(public dialog: MatDialog, private serversService: ServersService, private localStorageService: LocalStorageService) { }
 
   serverTypes: string[] = ['WEB', 'FTP', 'SSH', 'NTP', 'POP3', 'SMTP', 'HTTP'];
-
+  systems =  [
+   'Free BSD', 'Windows Server', 'Linux', 'CentOS'
+  ];
 
   ngOnInit() {
     this.registerForm = new FormGroup({
       name: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
       email: new FormControl(null, Validators.required),
-      types: new FormControl(null, Validators.required)
+      types: new FormControl(null, Validators.required),
+      system: new FormControl(null, Validators.required)
     });
   }
 

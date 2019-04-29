@@ -1,3 +1,44 @@
 .mat-dialog-actions {
   justify-content: center;
 }
+.mat-dialog-content {
+  max-height: 88vh !important;
+  max-width: 180vw !important;
+/*overflow: hidden;*/
+
+
+}
+
+/*pre {*/
+/*margin: px;*/
+/*padding: 0;*/
+/*}*/
+
+
+
+
+/*.mat-dialog-container {*/
+/*  display: flex !important;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.mat-dialog-container > * {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*}*/
+
+/*.mat-dialog-content {*/
+  /*max-height: inherit !important;*/
+  /*margin: 0;*/
+  /*max-width: none;*/
+
+/*}*/
+
+/*.mat-dialog-actions {*/
+/*  display: block !important;*/
+/*  flex-grow: inherit;*/
+/*  flex-shrink: inherit;*/
+/*  !*padding: 12px 0 0 !important;*!*/
+
+
+/*}*/

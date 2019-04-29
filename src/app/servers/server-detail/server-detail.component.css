@@ -10,9 +10,14 @@ table{
   border: 0;
 }
 table td {
-  padding: 28px ;
-  padding-bottom: 10px;
+  padding: 50px;
+  padding-top: 20px;
+  padding-bottom: 0px;
   font-size: 15px;
   text-align: left;
   font-weight: 300;
+}
+
+table tr {
+  padding-bottom: 3px;
 }

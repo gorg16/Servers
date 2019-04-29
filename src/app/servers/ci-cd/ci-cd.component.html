@@ -1,6 +1,6 @@
 <div class="all">
       <h1> CI/CD </h1>
-      <h3>CI commands</h3>
+      <h3>Autocomplete test commands</h3>
       <mat-form-field class="field">
         <input #valueTodo matInput (keyup.enter)="addNewTodo(valueTodo.value); valueTodo.value = ''" (blur)="addNewTodo(valueTodo.value); valueTodo.value=''"
                placeholder="Commands to run">
@@ -19,4 +19,65 @@
         </td>
       </tr>
     </table>
+
+    <table align="center" class="condition-table">
+      <tr>
+        <td>Continuous delivery</td>
+        <td>
+          <section class="example-section">
+            <mat-slide-toggle
+              class="example-margin"
+              [checked]="checked"
+              (change)="onChange()">
+              <p *ngIf="checked; else elseBlock" >
+                On
+              </p>
+
+              <ng-template #elseBlock>
+               <p>Off </p>
+              </ng-template>
+
+            </mat-slide-toggle>
+          </section>
+        </td>
+        <td>Continuous deployment</td>
+        <td>
+          <mat-slide-toggle
+            class="example-margin"
+            [checked]="checkedSecond"
+            (change)="onChangeSecondSlide()">
+            <p *ngIf="checkedSecond; else elseBlock" >
+              On
+            </p>
+
+            <ng-template #elseBlock>
+              <p>Off </p>
+            </ng-template>
+
+          </mat-slide-toggle>
+        </td>
+      </tr>
+    </table>
+
+  <div class="panel panel-default">
+    <div class="panel-heading" style="text-align: center"><b>Logs</b></div>
+    <table align="center" class="table" >
+      <tr>
+        <th>Command</th>
+        <th>Time</th>
+        <th>Logs</th>
+        <th>Status</th>
+        <th>Deployed</th>
+      </tr>
+      <tr *ngFor="let cicd of server.ciCdTable" [style.background-color]=" cicd.deployed === true ? 'lime' : 'crimson'">
+        <td>{{cicd.command}}</td>
+        <td>{{cicd.time | date: 'medium'}} </td>
+        <td (click)="openModal(cicd.logs)">{{cicd.logs| elipsis:30}} <a> more</a> </td>
+        <td>{{cicd.status}}</td>
+        <td>{{cicd.deployed}}</td>
+      </tr>
+    </table>
+  </div>
+
+<!--  <h1>{{server.serverType}}</h1>-->
 </div>

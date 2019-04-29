@@ -8,7 +8,7 @@
       <th>Status</th>
     </tr>
     <tr *ngFor="let logs of server.logs" [style.background-color]=" logs.status === 'Success' ? 'lime' : 'crimson'">
-      <td>{{logs.date}}</td>
+      <td>{{logs.date | date: 'medium'}}</td>
    <td (click)="openModal(logs.text )">{{logs.text | elipsis:30}} <a> more</a> </td>
       <td>{{logs.status}}</td>
     </tr>

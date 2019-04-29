@@ -16,6 +16,11 @@
       <td><b> Last Paymnet : </b> {{server.lastPaymnet}}</td>
       <td><b> Next Paymnet : </b> {{server.nextPayment}}</td>
     </tr>
+    <tr>
+      <td> <b> Port : </b> {{server.port}}</td>
+      <td><b>Username : </b> user{{currentUserNumber}}</td>
+      <td><b>StaticIP :  </b>  {{staticIp}}</td>
+    </tr>
   </table>
 
 
@@ -24,6 +29,7 @@
   </mat-card-content>
 
   <mat-card-actions style="text-align: center">
+    <button mat-raised-button style="background-color:lawngreen; color: white">Pay Now!</button>
     <button mat-raised-button color="primary" (click)="openDialog()" value="Restart"> Restart Server </button>
     <button mat-raised-button color="warn" (click)="openDialog()" value="Stop">Stop Server</button>
   </mat-card-actions>

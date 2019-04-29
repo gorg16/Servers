@@ -43,8 +43,17 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea rows="20" matInput placeholder="Your local public key(s)"></textarea>
+      <mat-label>Operating systems</mat-label>
+      <mat-select name="system"  formControlName="system" [(ngModel)]="systems[0]">
+        <mat-option *ngFor="let system of systems" [value]="system">
+          {{system}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea rows="10" matInput placeholder="Your local public key(s)"></textarea>
+    </mat-form-field>
+
     <button
       type="submit"
       mat-raised-button
