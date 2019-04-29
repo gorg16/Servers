@@ -30,8 +30,8 @@ export class TableComponent implements  OnChanges {
   openModal(text) {
     this.text = text;
     const dialogRef = this.dialog.open(LogsDetailsComponent, {
-      height: '400px',
-      width: '600px',
+      height: '99vh',
+      width: '280vw',
       data: {
         text: this.text
       }

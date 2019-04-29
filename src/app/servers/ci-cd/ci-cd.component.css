@@ -7,6 +7,12 @@
   text-align:center;
 
 }
+/deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #49c5b6;
+}
+/deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #49c5b6;
+}
 
 .header {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -43,4 +49,50 @@
   font-family: Monaco;
   font-weight: 300;
   font-style: normal;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+table td{
+  /*text-align: center;*/
+  /*padding-left: 30px;*/
+  /*font-size: 21px;*/
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+  /*font-weight: 300;*/
+  /*font-style: normal;*/
+}
+
+.condition-table p {
+  margin: 0 0 0;
+}
+
+.condition-table {
+  margin-top: 10px;
+}
+
+.condition-table td {
+text-align: center;
+padding-left: 30px;
+font-size: 21px;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-weight: 300;
+font-style: normal;
+
+}
+.panel-default {
+  margin-top: 17px;
+  border-color: #ddd;
+}
+
+table th {
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
 }

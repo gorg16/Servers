@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Server} from './servers.modal';
 import {BehaviorSubject} from 'rxjs';
 import {LogsModel} from './logs.model';
+import {CiCdTableModel} from './ci-cd-table.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class ServersService {
       15,
       'October',
       'November',
+       80,
        [
          new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
          2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -105,6 +107,10 @@ export class ServersService {
          }
          
          END RequestId: c2bdff74-d0f0-11e8-a249-25d8a7d31eab
+         // tslint:disable-next-line:max-line-length
+         // tslint:disable-next-line:max-line-length
+         // tslint:disable-next-line:max-line-length
+         // tslint:disable-next-line:max-line-length
          REPORT RequestId: c2bdff74-d0f0-11e8-a249-25d8a7d31eab	Duration: 319.74 ms	Billed Duration: 400 ms Memory Size: 128 MB	Max Memory Used: 43 MB	
          START RequestId: ca0147e1-d0f0-11e8-90d2-339e836c1e6b Version: $LATEST
          2018-10-16T03:08:43.469Z	ca0147e1-d0f0-11e8-90d2-339e836c1e6b	event
@@ -132,7 +138,7 @@ export class ServersService {
          }
          
          END RequestId: ca0147e1-d0f0-11e8-90d2-339e836c1e6b
-         REPORT RequestId: ca0147e1-d0f0-11e8-90d2-339e836c1e6b	Duration: 146.33 ms	Billed Duration: 200 ms Memory Size: 128 MB	Max Memory Used: 43 MB	
+         REPORT RequestId: ca0147e1-d0f0-11e8-90d2-339e836c1e6b	Duration: 146.33 ms	Billed Duration: 200 ms Memory Size: 128 MB	Max Memory Used: 43 MB
          START RequestId: d124371f-d0f0-11e8-b05c-b98337170c80 Version: $LATEST
          2018-10-16T03:08:55.462Z	d124371f-d0f0-11e8-b05c-b98337170c80	event
          {
@@ -212,6 +218,7 @@ export class ServersService {
              "success": true
          }
          `),
+
          new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
          2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
          {
@@ -3204,6 +3211,29 @@ export class ServersService {
              "success": true
          }
          `),
+       ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'success',
+         true
+       ),
+          new CiCdTableModel(
+           'success',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'success',
+            true
+         ),
+            new CiCdTableModel(
+             'command',
+             new Date('2019-05-29'),
+             'logsssssssssssssssssssssssssssssssss',
+             'success',
+              false
+           ),
+
        ]
              ),
      new Server(2,
@@ -3218,10 +3248,7 @@ export class ServersService {
        23,
        'May',
        'April',
-       // 'Failure',
-       // 'Success',
-       // new Date( '2018-07-13'),
-       // new Date('2018-09-13')
+       20,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -4532,7 +4559,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'fail',
+         false
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           true
+         ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           true
+         ),
+
+       ]
      ),
      new Server(3,
        'HTTP SERVER',
@@ -4546,10 +4596,7 @@ export class ServersService {
        7,
        'January',
        'February',
-       // 'Success',
-       // 'Failure',
-       // new Date( '2018-07-14'),
-       // new Date('2018-08-13')
+       80,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -6047,7 +6094,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'fail',
+         true
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           false
+         ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'success',
+           true
+         ),
+
+       ]
 
      ),
      new Server(4,
@@ -6063,6 +6133,7 @@ export class ServersService {
        12,
        'August',
        'September',
+       22,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -7373,7 +7444,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'fail',
+         false
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           true
+         ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           false
+         ),
+
+       ]
 
      ),
      new Server(5,
@@ -7388,6 +7482,7 @@ export class ServersService {
        15,
        'June',
        'July',
+       123,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -8698,7 +8793,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'fail',
+         true
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           false
+         ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logsssssssssssssssssssssssssssssssss',
+           'fail',
+           true
+         ),
+
+       ]
 
      ),
      new Server(6,
@@ -8713,6 +8831,7 @@ export class ServersService {
        4,
        'November',
        'December',
+       123,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -10023,7 +10142,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-05-29'),
+         'logsssssssssssssssssssssssssssssssss',
+         'fail',
+         false
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'sjaiasb;lkcjdbsakdjba;sdkj',
+           'fail',
+           true
+         ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-05-29'),
+           'logckjbasdlaksjbhcas;kfjasb;fhasbld',
+           'fail',
+           false
+         ),
+
+       ]
 
      ),
      new Server(7,
@@ -10038,6 +10180,7 @@ export class ServersService {
        8,
        'December',
        'January',
+       25,
        [
         new LogsModel('Success', new Date( '2018-07-12'), `START RequestId: 912e77b9-d0f0-11e8-ba52-db3c9ede2a25 Version: $LATEST
         2018-10-16T03:07:08.964Z	912e77b9-d0f0-11e8-ba52-db3c9ede2a25	event
@@ -11348,7 +11491,30 @@ export class ServersService {
             "success": true
         }
         `),
-      ]
+      ],
+       [ new CiCdTableModel(
+         'command',
+         new Date('2019-12-12'),
+         'logsssssssssssssssssssssssssssssssss',
+         'success',
+         false
+       ),
+         new CiCdTableModel(
+           'command',
+           new Date('2019-07-12'),
+           'logsssssssssssssssssssssssssssssssss',
+           'success',
+           false
+         ),
+         new CiCdTableModel(
+           'dksfgajblskfnacdlc',
+           new Date('2019-05-29'),
+           'logsssssssssssssjkdsbaklsjbaskbcgaAAAAAAAAANNNNNNNNNNNDDDDDDDDOOOOOOOoo',
+           'success',
+           true
+         ),
+
+       ]
 
      ),
               ];

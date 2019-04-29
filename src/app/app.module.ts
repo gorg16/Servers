@@ -36,6 +36,10 @@ import {MatTableModule} from '@angular/material/table';
 import {TablesService} from './tables.service';
 import { ElipsisPipe } from './elipsis.pipe';
 import { LogsDetailsComponent } from './servers/table/logs-details/logs-details.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { CiCdDetailsComponent } from './servers/ci-cd/ci-cd-details/ci-cd-details.component';
+
+
 
 
 @NgModule({
@@ -56,7 +60,8 @@ import { LogsDetailsComponent } from './servers/table/logs-details/logs-details.
     TableComponent,
     CiCdComponent,
     ElipsisPipe,
-    LogsDetailsComponent
+    LogsDetailsComponent,
+    CiCdDetailsComponent
 
   ],
   imports: [
@@ -77,10 +82,11 @@ import { LogsDetailsComponent } from './servers/table/logs-details/logs-details.
     MatTabsModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatTableModule
+    MatTableModule,
+    MatSlideToggleModule
 
   ],
-  entryComponents: [MatDialogComponent, DialogSuccessComponent, LogsDetailsComponent]
+  entryComponents: [MatDialogComponent, DialogSuccessComponent, LogsDetailsComponent, CiCdDetailsComponent]
   ,
   providers: [ ServersService, TablesService],
   bootstrap: [AppComponent]

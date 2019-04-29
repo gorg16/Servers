@@ -1,5 +1,6 @@
 import { Chart } from 'chart.js';
 import {LogsModel} from './logs.model';
+import {CiCdTableModel} from './ci-cd-table.model';
 
 export class Server {
  public id: number;
@@ -14,11 +15,9 @@ export class Server {
  public serverErrors: number;
  public lastPaymnet: string;
  public nextPayment: string;
- // public tableDatastatus1: string;
- // public tableDataStatus2: string;
- // public workedTimeFrom: Date;
- // public workedTimeTo: Date;
-  public logs: LogsModel[];
+ public port: number;
+ public logs: LogsModel[];
+ public ciCdTable: CiCdTableModel[];
  constructor(
              id: number,
              name: string,
@@ -32,11 +31,9 @@ export class Server {
              serverErrors: number,
              lastPayment: string,
              nextPaymnet: string,
-             // tableDataStatus1: string,
-             // tableDataStatus2: string,
-             // workedTimeFrom: Date,
-             // workedTimeTo: Date
-             logs: LogsModel[]
+             port: number,
+             logs: LogsModel[],
+             ciCdTable: CiCdTableModel[],
  ) {
    this.name = name;
    this.description = desc;
@@ -50,10 +47,8 @@ export class Server {
    this.serverErrors = serverErrors;
    this.lastPaymnet = lastPayment;
    this.nextPayment = nextPaymnet;
-   // this.tableDatastatus1 = tableDataStatus1;
-   // this.tableDataStatus2 = tableDataStatus2;
-   // this.workedTimeFrom = workedTimeFrom;
-   // this.workedTimeTo = workedTimeTo;
+   this.port = port;
    this.logs = logs;
+   this.ciCdTable = ciCdTable;
  }
 }
