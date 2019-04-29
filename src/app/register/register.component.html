@@ -42,6 +42,9 @@
         <mat-option *ngFor="let types of serverTypes" [value]="types">{{types}}</mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea rows="20" matInput placeholder="Your local public key(s)"></textarea>
+    </mat-form-field>
     <button
       type="submit"
       mat-raised-button
